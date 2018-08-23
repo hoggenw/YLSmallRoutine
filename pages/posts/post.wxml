@@ -1,0 +1,62 @@
+<view>
+  <swiper indicator-dots = 'true' autoplay = 'true' interval = '3000'>
+    <swiper-item>
+      <image src='/images/wx.png' ></image>
+    </swiper-item>
+    <swiper-item>
+      <image src='/images/vr.png' ></image>
+    </swiper-item>
+    <swiper-item>
+      <image src='/images/iqiyi.png'></image>
+    </swiper-item>
+  </swiper>
+<!-- 文章列表容器 -->
+  <view class='post-container'>
+    <view class='post-autor-date'>
+      <image src='/images/avatar/4.png'class='post-autor'>
+      </image>
+      <text  class='post-date'>Nov 25 2018</text>
+    </view>
+    <view class='post-main-content'>
+          <text class='post-title'> 正式圣诞节是可敬的</text>
+          <image src='/images/post/crab.png' class='post-image'>
+          </image>
+          <text class='post-content'>第二步，打开微信开发者工具，选择新建小程序项目，我们先不需理解AppID的概念，新建项目时选择无AppID，并取消勾选“建立普通快速启动模板”的选项。</text>
+           <view class='post-like'>
+                     <image src='../../images/icon/chat.png' class='post-like-image' >
+                     </image>
+                     <text class='post-like-font'>80</text>
+                    <image src='../../images/icon/view.png' class='post-like-image'>
+                     </image>
+                    <text class='post-like-font'>1125</text>
+
+              </view>
+    </view>
+
+  </view>
+
+   <view class='post-container'>
+    <view class='post-autor-date'>
+      <image src='/images/avatar/5.png'class='post-autor'>
+      </image>
+      <text  class='post-date'>Nov 26 2018</text>
+    </view>
+    <view class='post-main-content'>
+          <text class='post-title'> 玛蒂娜四惠东</text>
+          <image src='/images/post/vr.png' class='post-image'>
+          </image>
+          <text class='post-content'>用于指定小程序由哪些页面组成，每一项都对应一个页面的 路径+文件名 信息。文件名不需要写文件后缀，框架会自动去寻找对于位置的 .json, .js, .wxml, .wxss 四个文件进行处理。</text>
+           <view class='post-like'>
+                     <image src='../../images/icon/chat.png' class='post-like-image' >
+                     </image>
+                     <text class='post-like-font'>80</text>
+                    <image src='../../images/icon/view.png' class='post-like-image'>
+                     </image>
+                    <text class='post-like-font'>1125</text>
+
+              </view>
+    </view>
+
+  </view>
+
+</view>
