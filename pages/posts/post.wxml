@@ -15,7 +15,10 @@
   <!-- 文章列表容器 -->
   <block wx:for="{{post_key}}" wx:key="post_key" wx:for-item="item" wx:for-index="index">
   <!-- //template 模板 -->
-    <template is="{{'postItem'}}" data="{{item}}"/>
+    <view catchtap="onPostTap" data-post-id='{{item.postId}}'>
+        <template is="{{'postItem'}}" data="{{...item}}" />
+    </view>
+    
   </block>
 
 </view>
