@@ -1,0 +1,85 @@
+
+.post-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  background-color: #fff;
+  border-bottom: 1px solid #e0e0e0;
+  border-top: 1px solid #e0e0e0;
+  padding-bottom: 1px solid #e0e0e0;
+  width: 100%;
+}
+
+.post-autor-date {
+  /* margin-top: 10rpx; */
+  margin: 10rpx 20rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.post-autor {
+  width: 60rpx;
+  height: 60rpx;
+  vertical-align: middle;
+}
+
+.post-date {
+  margin-left: 20rpx;
+  font-size: 26rpx;
+  text-align: center;
+  line-height: 60rpx;
+}
+
+.post-title {
+  font-size: 34rpx;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.post-main-content {
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+}
+
+.post-image {
+  margin-left: 16rpx;
+  margin-right: 16rpx;
+  width: 100%;
+  height: 340rpx;
+  margin: auto 0;
+  margin-bottom: 10px;
+  margin-top: 5px;
+}
+
+.post-content {
+  color: #666;
+  font-size: 28rpx;
+  margin-bottom: 20rpx;
+  margin-left: 20prx;
+  letter-spacing: 2rpx;
+  line-height: 40rpx;
+}
+
+.post-like {
+  font-size: 13px;
+  display: flex;
+  flex-direction: row;
+  line-height: 16px;
+  margin-left: 0px;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.post-like-image {
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.post-like-font {
+  vertical-align: middle;
+  margin-right: 20px;
+}
