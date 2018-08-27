@@ -1,24 +1,23 @@
 <view class='container'>
-  <image class='head-image' src='/images/post/sls.JPG'></image>
-  <image class='music-image' src='/images/music/music-start.png'></image>
+  <image class='head-image' src='{{postData.headImage}}'></image>
+  <image catchtap='musicAction' class='music-image' src="{{isPlayMusic ? '/images/music/music-stop.png':'/images/music/music-start.png'}}"></image>
   <view class='author-data'>
     <image class='author-data-header' src='/images/avatar/5.png'></image>
-    <text class='author-data-name'>huge</text>
+    <text class='author-data-name'>{{postData.authorName}}</text>
     <text class='author-data-hint'>发表于</text>
-    <text class='author-data-time'>三天前</text>
+    <text class='author-data-time'>{{postData.dataTime}}</text>
   </view>
 
-  <text class='artical-title'>房是多少价爱福家山东省肯德基萨达所大所大撒?</text>
+  <text class='artical-title'>{{postData.articalTitle}}</text>
 
   <view class='line-view'>
     <view class='circle-image'>
-      <image class='like-image' src='/images/icon/collection.png'></image>
-      <image class='share-image' src='/images/icon/share.png'></image>
+      <image class='like-image' catchtap='onCollectionTap' wx:if = "{{conllected}}" src='/images/icon/collection.png'></image>
+      <image class='like-image' catchtap='onCollectionTap' wx:else src='/images/icon/collection-anti.png'></image>
+      <image class='share-image' catchtap= 'onShareTap' src='/images/icon/share.png'></image>
     </view>
     <view class='line'></view>
   </view>
-  <text class='content'>代工产能台积电最为庞大，三星小得多，对于代工产能这一方面来说，英特尔和三星之间无法比较，因为英特尔虽然最近几年一直想扩大代工业务，但始终没有大客户，也就无从推算到底可以拿出多少产能用于代工。至于代工的服务能力，这个不能量化，台积电专业代工30年，长期占据过半的市场份额，在客户满意度上肯定有自己的一套，不然张忠谋怎会在听说英特尔想涉足代工时显得气定神闲。听过一种说法“做台积电的供应商很痛苦，但做台积电的客户很幸福”，也就是说台积电能帮客户设想周到，也很能协助客户充分利用台积电的工艺优势提升产品的价值。
-综上所述，由于专业代工厂的格罗方德目前量产的还是三星授权的14纳米工艺，7纳米技术能否在2019年如约推出也无法得到根本的保证。联电更是宣布放弃竞逐10纳米以下的先进工艺，这两家都没有拿出来比较的价值，台积电的龙头地位是不可撼动的。三星尽管近年来发展很快，但是相比台积电仍然有太多需要提高的地方
-</text>
+  <text class='content'>{{postData.detailContent}}</text>
 
 </view>
