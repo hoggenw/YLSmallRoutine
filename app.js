@@ -1,7 +1,7 @@
 // //"#b3d4db"
 App({
 
-  globaData:{
+  globalData:{
     g_isPlayMusic:false,
     g_currentMusicPostId:null,
   },
