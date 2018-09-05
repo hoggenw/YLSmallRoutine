@@ -1,0 +1,52 @@
+@import "../movie/movie-template.wxss";
+
+.movie-list-container {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.movie-list-head {
+  margin-top: 12rpx;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.movie-list-slogan {
+  font-size: 24rxp;
+  margin-left: 16rpx;
+  
+}
+
+.movie-list-more {
+  width: 120rxp;
+  margin-right: 12rxp;
+  display: flex;
+  flex-direction: row;
+}
+
+.movie-list-text {
+  /* vertical-align: middle; */
+  margin-right: 10rpx;
+  color: #1f4ba5;
+  padding-bottom: 12rpx;
+}
+
+.movie-list-img {
+  width: 9rpx;
+  height: 16rpx;
+  margin-right: 10rpx;
+  padding-top: 12rpx;
+  /* vertical-align: middle; */
+}
+
+.movie-list-items {
+  display: flex;
+  flex-direction: row;
+  justify-content:space-evenly;
+  background-color: #fff;
+  padding-bottom: 20rpx;
+  padding-top: 20rpx;
+}
