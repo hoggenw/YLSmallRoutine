@@ -14,7 +14,7 @@
     "list": [
       {
         "pagePath": "pages/posts/post",
-        "text": "首页",
+        "text":"首页",
         "iconPath":"/images/tab/yuedu.png",
         "selectedIconPath":"/images/tab/yuedu_hl.png"
       },
