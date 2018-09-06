@@ -12,6 +12,9 @@ Page({
     hotData: {},
     topData: {},
     screeningData: {},
+    searchResult: {},
+    containerShow: true,
+    searchPanelShow: false,
   },
 
   /**
@@ -68,7 +71,7 @@ Page({
 
       var title = temp.title;
       if (title.length > 6) {
-        title = title.substring(0, 6);
+        title = title.substring(0, 6) + '...';
       }
       var model = {
         title: title,
@@ -94,6 +97,25 @@ Page({
       url: 'more-movies/more-movies?category=' + category,
     })
   },
+
+  onBindfocus:function(event){
+    this.setData({
+      containerShow: false,
+      searchPanelShow: true
+    })
+  },
+  onBindBlur:function(event){
+
+  },
+  onCancelImgTap:function(event){
+    this.setData({
+      containerShow: true,
+      searchPanelShow: false,
+      searchResult: {},
+    })
+  },
+
+
 
   /**
    * 生命周期函数--监听页面初次渲染完成
