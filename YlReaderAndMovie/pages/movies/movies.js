@@ -1,6 +1,9 @@
 var utils = require('../../utils/utils.js')
+var app = getApp();
 
 Page({
+
+  
 
   /**
    * 页面的初始数据
@@ -15,18 +18,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    var globalData = app.globalData;
+    this.requestDataWithUrl(globalData.g_hotUrl +'&start=0&count=3','hotData');
 
-    // 正在热映
-    var hotUrl = "http://api.douban.com/v2/movie/nowplaying?apikey=0df993c66c0c636e29ecbb5344252a4a&start=0&count=3";
-    //top250
-    var topUrl = "http://api.douban.com/v2/movie/top250?apikey=0df993c66c0c636e29ecbb5344252a4a&start=0&count=3";
-    //即将上映
-    var screeningUrl = "http://api.douban.com/v2/movie/coming?apikey=0df993c66c0c636e29ecbb5344252a4a&start=0&count=3";
-
-    this.requestDataWithUrl(hotUrl,'hotData');
-
-    this.requestDataWithUrl(topUrl, 'topData');
-    this.requestDataWithUrl(screeningUrl,'screeningData');
+    this.requestDataWithUrl(globalData.g_topUrl + '&start=0&count=3', 'topData');
+    this.requestDataWithUrl(globalData.g_screeningUrl + '&start=0&count=3','screeningData');
 
   },
 
@@ -55,7 +51,7 @@ Page({
 
   processDoubanData: function(moviesDouban, key) {
     var movies = [];
-    console.log(moviesDouban);
+    //console.log(moviesDouban);
     for (var index = 0; index <= 2; index++) {
       var temp;
       var average;
@@ -90,6 +86,15 @@ Page({
     };
     this.setData(readyData)
   },
+
+  onMoreTap:function(event){
+    //'豆瓣电影Top250' '即将上映的电影' '正在上映的电影'
+    var category = event.currentTarget.dataset.category;
+    wx.navigateTo({
+      url: 'more-movies/more-movies?category=' + category,
+    })
+  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
