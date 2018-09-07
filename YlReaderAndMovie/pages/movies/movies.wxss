@@ -1,4 +1,5 @@
 @import "movieList/movieList-template.wxss";
+@import "movie-grid/movie-grid-template.wxss";
 
 .container {
   background-color: #f3f4f5

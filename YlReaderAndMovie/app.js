@@ -10,6 +10,10 @@ App({
     g_topUrl: "http://api.douban.com/v2/movie/top250?apikey=0df993c66c0c636e29ecbb5344252a4a",
     //即将上映
     g_screeningUrl: "http://api.douban.com/v2/movie/coming?apikey=0df993c66c0c636e29ecbb5344252a4a",
+    //搜索
+    g_movieSearch:"http://api.douban.com/v2/movie/search?apikey=0df993c66c0c636e29ecbb5344252a4a",
+    //详情
+    g_movieSearch: "http://api.douban.com/v2/movie/subject?apikey=0df993c66c0c636e29ecbb5344252a4a",
   },
   /**
    * 当小程序初始化完成时，会触发 onLaunch（全局只触发一次）

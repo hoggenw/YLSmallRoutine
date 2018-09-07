@@ -53,41 +53,69 @@ Page({
   },
 
   processDoubanData: function(moviesDouban, key) {
-    var movies = [];
-    //console.log(moviesDouban);
-    for (var index = 0; index <= 2; index++) {
-      var temp;
-      var average;
-      var stars;
-      if (key ==='topData') {
+    if(key ==='空'){
+      var movies = [];
+      for (var index in moviesDouban.subjects) {
+        var temp;
+        var average;
+        var stars;
         temp = moviesDouban.subjects[index];
         average = temp.rating.average;
-        stars = utils.convertToStarsArray(temp.rating.stars) ;
-      } else {
-        temp = moviesDouban.entries[index];
-        average = temp.rating;
-        stars = utils.convertToStarsArray(temp.stars);
+        stars = utils.convertToStarsArray(temp.rating.stars);
+        var title = temp.title;
+        if (title.length > 6) {
+          title = title.substring(0, 6) + '...';
+        }
+        var model = {
+          title: title,
+          average: average,
+          coverageUrl: temp.images.medium,
+          movieId: temp.id,
+          stars: stars
+        }
+        movies.push(model);
       }
+      this.setData({
+        searchResult: movies
+      });
+    }else{
+      var movies = [];
+      console.log(moviesDouban);
+      for (var index = 0; index <= 2; index++) {
+        var temp;
+        var average;
+        var stars;
+        if (key === 'topData') {
+          temp = moviesDouban.subjects[index];
+          average = temp.rating.average;
+          stars = utils.convertToStarsArray(temp.rating.stars);
+        } else {
+          temp = moviesDouban.entries[index];
+          average = temp.rating;
+          stars = utils.convertToStarsArray(temp.stars);
+        }
 
-      var title = temp.title;
-      if (title.length > 6) {
-        title = title.substring(0, 6) + '...';
+        var title = temp.title;
+        if (title.length > 6) {
+          title = title.substring(0, 6) + '...';
+        }
+        var model = {
+          title: title,
+          average: average,
+          coverageUrl: temp.images.medium,
+          movieId: temp.id,
+          stars: stars
+        }
+        movies.push(model);
       }
-      var model = {
-        title: title,
-        average: average,
-        coverageUrl: temp.images.medium,
-        movieId: temp.id,
-        stars: stars
-      }
-      movies.push(model);
+      var readyData = {};
+      readyData[key] = {
+        movies: movies,
+        categoryTitile: moviesDouban.title
+      };
+      this.setData(readyData)
     }
-    var readyData = {};
-    readyData[key] = {
-      movies: movies,
-      categoryTitile: moviesDouban.title
-    };
-    this.setData(readyData)
+    
   },
 
   onMoreTap:function(event){
@@ -98,6 +126,14 @@ Page({
     })
   },
 
+  onMovieTap: function (event) {
+    //'豆瓣电影Top250' '即将上映的电影' '正在上映的电影'
+    var movieId = event.currentTarget.dataset.movieid;
+    wx.navigateTo({
+      url: 'movies-detail/movies-detail?movieId=' + movieId,
+    })
+  },
+
   onBindfocus:function(event){
     this.setData({
       containerShow: false,
@@ -105,6 +141,10 @@ Page({
     })
   },
   onBindBlur:function(event){
+    var text = event.detail.value;
+    console.log(text);
+    //app.globalData
+    this.requestDataWithUrl(app.globalData.g_movieSearch + '&q=' + text, '空');
 
   },
   onCancelImgTap:function(event){

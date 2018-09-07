@@ -5,7 +5,7 @@ Page({
     //   url: '../posts/post',
     // });
     console.log('onTap');
-    wx.redirectTo({
+    wx.switchTab({
       url: '../posts/post',
     })
   },
